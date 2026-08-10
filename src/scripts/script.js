@@ -47,13 +47,50 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.body.appendChild(scrollTopBtn);
 
-    window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+
+    const onScroll = () => {
+        // Compact navbar on scroll
+        header.classList.toggle('scrolled', window.pageYOffset > 60);
+
         if (window.pageYOffset > 300) {
             scrollTopBtn.style.display = 'block';
         } else {
             scrollTopBtn.style.display = 'none';
         }
-    });
+    };
+
+    // Set initial state (e.g. after refreshing mid-page)
+    onScroll();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Scroll reveal animations for page sections & card grids
+    const revealTargets = [...new Set([
+        document.querySelector('#home'),
+        ...document.querySelectorAll('.all'),
+        ...document.querySelectorAll('.vision-info-card'),
+        ...document.querySelectorAll('.why-vision'),
+        ...document.querySelectorAll('.cards')
+    ])].filter(Boolean);
+
+    revealTargets.forEach(el => el.classList.add('section-hidden'));
+
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        revealTargets.forEach(el => revealObserver.observe(el));
+    } else {
+        // Fallback: show everything immediately
+        revealTargets.forEach(el => el.classList.add('fade-in'));
+    }
 
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({
