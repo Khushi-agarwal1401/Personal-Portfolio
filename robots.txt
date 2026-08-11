@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khushi-agarwal1401.github.io/ui-portfolio/sitemap.xml

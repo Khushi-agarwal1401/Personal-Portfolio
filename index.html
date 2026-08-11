@@ -3,8 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Khushi Agarwal">
-    <meta name="description" content="Portfolio of Khushi Agarwal, a Computer Science student and aspiring tech entrepreneur focusing on web development, Python, and MySQL projects based in India.">
+    <meta name="description" content="Portfolio of Khushi Agarwal, a Computer Science student at PW Institute of Innovation and aspiring tech entrepreneur building India's future through web development, Python, MySQL, and the Indus vision.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#a78bfa">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
+    <link rel="canonical" href="https://khushi-agarwal1401.github.io/ui-portfolio/">
+    <title>Khushi Agarwal | CS Student & Aspiring Tech Entrepreneur</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Khushi Agarwal | CS Student & Aspiring Tech Entrepreneur">
+    <meta property="og:description" content="Computer Science student and aspiring tech entrepreneur — exploring web development, Python, MySQL, and building India's technological future.">
+    <meta property="og:url" content="https://khushi-agarwal1401.github.io/ui-portfolio/">
+    <meta property="og:image" content="https://khushi-agarwal1401.github.io/ui-portfolio/public/images/Me.jpg">
+    <meta property="og:site_name" content="Khushi Agarwal — Portfolio">
+    <meta property="profile:first_name" content="Khushi">
+    <meta property="profile:last_name" content="Agarwal">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Khushi Agarwal | CS Student & Aspiring Tech Entrepreneur">
+    <meta name="twitter:description" content="Computer Science student and aspiring tech entrepreneur building India's technological future.">
+    <meta name="twitter:image" content="https://khushi-agarwal1401.github.io/ui-portfolio/public/images/Me.jpg">
+    <meta name="twitter:image:alt" content="Khushi Agarwal — profile photo">
+
+    <!-- Structured data (JSON-LD Person) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Khushi Munna Kumar Agarwal",
+        "givenName": "Khushi",
+        "familyName": "Agarwal",
+        "jobTitle": "Computer Science Student",
+        "description": "Computer Science student at PW Institute of Innovation and aspiring tech entrepreneur building India's own technology brand, Indus.",
+        "url": "https://khushi-agarwal1401.github.io/ui-portfolio/",
+        "email": "mailto:khushiagarwalg1@gmail.com",
+        "image": "https://khushi-agarwal1401.github.io/ui-portfolio/public/images/Me.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Thane",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+        },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "PW Institute of Innovation" },
+            { "@type": "HighSchool", "name": "Saraswati Vidyalaya" }
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "Python", "MySQL", "C++", "Object-Oriented Programming", "Web Development"],
+        "sameAs": [
+            "https://github.com/Khushi-agarwal1401",
+            "https://www.linkedin.com/in/khushi-agarwal-a37846381/"
+        ]
+    }
+    </script>
+    <!-- Apply saved/system theme before first paint (avoids flash of wrong theme) -->
+    <script src="./src/scripts/theme-init.js"></script>
     <!-- Preload LCP Image -->
     <link rel="preload" as="image" href="./public/images/Me.jpg">
     
@@ -23,14 +77,15 @@
     </noscript>
 
     <link rel="stylesheet" href="./src/styles/style.css">
-    <title>Portfolio</title>
 </head>
 <body>
+    <div class="reading-progress" aria-hidden="true"></div>
+
     <header>
         <nav>
             <div class="navbar-container">
-                <a href="#name">Khushi Munna Kumar Agarwal</a>
-                <div class="navbar">
+                <a href="#home" class="logo">Khushi Munna Kumar Agarwal</a>
+                <div class="navbar" id="navbar-menu">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
@@ -39,6 +94,17 @@
                     <a href="#vision">Vision</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+                        <i class="bi bi-moon-stars"></i>
+                        <i class="bi bi-sun"></i>
+                    </button>
+                    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -46,20 +112,48 @@
         <section id="home-section">
             <div id="home">
                 <div class="image">
-                    <img src="./public/images/Me.jpg" alt="Khushi Agarwal" width="380" height="380">
+                    <div class="image-ring">
+                        <img src="./public/images/Me.jpg" alt="Khushi Agarwal" width="380" height="380" fetchpriority="high" decoding="async">
+                    </div>
                     <p class="degree">BTech Student</p>
                 </div>
                 <div class="detail-container">
                     <div>
                         <p id="stream">Computer Science Student</p>
                         <h1 id="myname">Khushi Munna Kumar Agarwal</h1>
-                        <p id="aboutme">First-Year BTech Student | Aspiring Innovator | Future Tech Entrepreneur</p>
+                        <p id="aboutme"><span class="aboutme-prefix">First-Year BTech Student · Aspiring </span><span id="typewriter" aria-hidden="true"></span><span class="typing-caret" aria-hidden="true"></span><span class="sr-only">Web Developer, Problem Solver, Tech Entrepreneur, Future Innovator</span></p>
                         <p id="aboutaim">Building the foundation for India's technological future, one line of code at a time.</p>
                     </div>
-                    <div class="links">                        
-                        <button id="btn1"><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWrRpcckvTQfTqzsHRTxcxwcmTNRGBKsClNPWPLgChBvjXZtPFcTpcxnDWGbzDlRQSQlMZjkQ" target="_blank"><i class="link bi bi-envelope"></i> Get in Touch</a></button>
-                        <button class="btn2"><a href="https://github.com/Khushi-agarwal1401" target="_blank"><i class="link bi bi-github"></i> GitHub</a></button>
-                        <button class="btn2"><a href="https://www.linkedin.com/in/khushi-agarwal-a37846381/" target="_blank"><i class="link bi bi-linkedin"></i> Linkedin</a></button>
+                    <div class="links">
+                        <a id="btn1" class="magnetic" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWrRpcckvTQfTqzsHRTxcxwcmTNRGBKsClNPWPLgChBvjXZtPFcTpcxnDWGbzDlRQSQlMZjkQ" target="_blank" rel="noopener"><i class="link bi bi-envelope"></i> Get in Touch</a>
+                        <a class="btn2 magnetic" href="https://github.com/Khushi-agarwal1401" target="_blank" rel="noopener"><i class="link bi bi-github"></i> GitHub</a>
+                        <a class="btn2 magnetic" href="https://www.linkedin.com/in/khushi-agarwal-a37846381/" target="_blank" rel="noopener"><i class="link bi bi-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee" aria-label="Technologies I work with">
+                <div class="marquee-track">
+                    <div class="marquee-group">
+                        <span class="marquee-item"><i class="bi bi-filetype-html"></i>HTML</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-css"></i>CSS</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-js"></i>JavaScript</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-py"></i>Python</span>
+                        <span class="marquee-item"><i class="bi bi-database"></i>MySQL</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-cpp"></i>C++</span>
+                        <span class="marquee-item"><i class="bi bi-github"></i>Git &amp; GitHub</span>
+                        <span class="marquee-item"><i class="bi bi-phone"></i>Responsive Design</span>
+                        <span class="marquee-item"><i class="bi bi-diagram-3"></i>OOP</span>
+                    </div>
+                    <div class="marquee-group" aria-hidden="true">
+                        <span class="marquee-item"><i class="bi bi-filetype-html"></i>HTML</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-css"></i>CSS</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-js"></i>JavaScript</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-py"></i>Python</span>
+                        <span class="marquee-item"><i class="bi bi-database"></i>MySQL</span>
+                        <span class="marquee-item"><i class="bi bi-filetype-cpp"></i>C++</span>
+                        <span class="marquee-item"><i class="bi bi-github"></i>Git &amp; GitHub</span>
+                        <span class="marquee-item"><i class="bi bi-phone"></i>Responsive Design</span>
+                        <span class="marquee-item"><i class="bi bi-diagram-3"></i>OOP</span>
                     </div>
                 </div>
             </div>
@@ -74,7 +168,7 @@
                 </p>
 
                 <p class="intro">
-                    I have foundational knowledge in HTML, CSS, JavaScript, Basic Python with NumPy, MySQL, and Object-Oriented Programming (OOP). I am actively working on strengthening these skills and expanding my understanding of software development and modern technologies. My goal is to keep learning, building projects, and gaining practical experience that helps me grow as a developer.
+                    I have foundational knowledge in HTML, CSS, JavaScript, Basic Python with NumPy, MySQL and C++ with Object-Oriented Programming (OOP). I am actively working on strengthening these skills and expanding my understanding of software development and modern technologies. My goal is to keep learning, building projects, and gaining practical experience that helps me grow as a developer.
                 </p>
 
                 <p class="intro">
@@ -102,6 +196,7 @@
                             </div>
                         </div>
                         <div class="card-footer">Building responsive and modern web layouts</div>
+                        <div class="skill-bar" style="--level: 72%" aria-hidden="true"><span></span></div>
                     </div>
                     <div class="small-card">
                         <div class="card-top">
@@ -112,6 +207,7 @@
                             </div>
                         </div>
                         <div class="card-footer">Core programming concepts and mini-projects</div>
+                        <div class="skill-bar" style="--level: 48%" aria-hidden="true"><span></span></div>
                     </div>
                     <div class="small-card">
                         <div class="card-top">
@@ -122,6 +218,7 @@
                             </div>
                         </div>
                         <div class="card-footer">Database management and SQL queries</div>
+                        <div class="skill-bar" style="--level: 48%" aria-hidden="true"><span></span></div>
                     </div>
                 </div>
                 <h2>Soft Skills</h2>
@@ -154,6 +251,23 @@
                         <div class="card-footer">Passionate about exploring new ideas and innovations</div>
                     </div>
                 </div>
+                <h2>Skills Radar</h2>
+                <div class="cards radar-cards">
+                    <div class="radar-card">
+                        <div class="radar-head">
+                            <div class="icon"><i class="bi bi-code-slash"></i></div>
+                            <h3>Technical Radar</h3>
+                        </div>
+                        <div class="radar-chart" data-radar="tech" role="img" aria-label="Technical skills radar chart: HTML 72, CSS 72, JavaScript 70, Python 48, MySQL 48, C plus plus 45"></div>
+                    </div>
+                    <div class="radar-card">
+                        <div class="radar-head">
+                            <div class="icon"><i class="bi bi-people"></i></div>
+                            <h3>Soft Skills Radar</h3>
+                        </div>
+                        <div class="radar-chart" data-radar="soft" role="img" aria-label="Soft skills radar chart: Communication 85, Teamwork 80, Leadership 75, Adaptability 88, Problem solving 82, Curiosity 90"></div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="projects-section">
@@ -175,6 +289,7 @@
                             <span>CSS</span>
                             <span>Responsive Design</span>
                         </div>
+                        <a href="https://khushi-agarwal1401.github.io/Personal-Portfolio/" target="_blank" rel="noopener" class="project-link"><i class="bi bi-box-arrow-up-right"></i> View Live Demo</a>
                     </div>
                     <div class="card">
                         <div class="card-top">
@@ -199,12 +314,13 @@
                                 <p class="card-heading">MySQL Database Practice</p>
                             </div>
                         </div>
-                        <div class="card-footer">Hands-on practice with relational databases, including schema design, SQL queries, and CRUD operations for student, banking, and library management systems.</div>
+                        <div class="card-footer">Hands-on practice with relational databases, including schema design, SQL queries, and CRUD operations for a grocery store management app (products, orders, customers, and inventory).</div>
                         <div class="list" id="c3">
                             <span>MySQL</span>
                             <span>SQL Queries</span>
                             <span>Database Design</span>
                         </div>
+                        <a href="https://khushi-agarwal1401.github.io/Grocery_App/admin/index.html" target="_blank" rel="noopener" class="project-link"><i class="bi bi-box-arrow-up-right"></i> View Live Demo</a>
                     </div>
                     <div class="card">
                         <div class="card-top">
@@ -249,7 +365,7 @@
                         <div class="list c1">
                             <span>Physics</span>
                             <span>Chemistry</span>
-                            <span>Mathemactics</span>
+                            <span>Mathematics</span>
                             <span>Computer Science</span>
                         </div>
                     </div>
@@ -260,7 +376,7 @@
                                 <p class="card-heading">Bachelor of Technology in Computer Science</p>
                                 <p>PW Institute of Innovation</p>
                             </div>
-                            <div class="list c1"><span>Currently Persuing</span></div>
+                            <div class="list c1"><span>Currently Pursuing</span></div>
                         </div>
                         <div class="duration">
                             <p><i class="bi bi-geo-alt"></i> Pune, Maharashtra</p>
@@ -346,7 +462,7 @@
                                     <div class="icon"><i class="bi bi-envelope"></i></div>
                                     <div class="card-content">
                                         <p class="card-heading1">Email</p>
-                                        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWrRpcckvTQfTqzsHRTxcxwcmTNRGBKsClNPWPLgChBvjXZtPFcTpcxnDWGbzDlRQSQlMZjkQ" class="card-body1" target="_blank">khushiagarwalg1@gmail.com</a>
+                                        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWrRpcckvTQfTqzsHRTxcxwcmTNRGBKsClNPWPLgChBvjXZtPFcTpcxnDWGbzDlRQSQlMZjkQ" class="card-body1" target="_blank" rel="noopener">khushiagarwalg1@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +480,7 @@
                                     <div class="icon"><i class="bi bi-linkedin"></i></div>
                                     <div class="card-content">
                                         <p class="card-heading1">LinkedIn</p>
-                                        <a href="https://www.linkedin.com/in/khushi-agarwal-a37846381/" class="card-body1" target="_blank">linkedin.com/in/khushi-agarwal</a>
+                                        <a href="https://www.linkedin.com/in/khushi-agarwal-a37846381/" class="card-body1" target="_blank" rel="noopener">linkedin.com/in/khushi-agarwal</a>
                                     </div>
                                 </div>
                             </div>
@@ -373,7 +489,7 @@
                                     <div class="icon"><i class="bi bi-github"></i></div>
                                     <div class="card-content">
                                         <p class="card-heading1">GitHub</p>
-                                        <a href="https://github.com/Khushi-agarwal1401" class="card-body1" target="_blank">github.com/khushiagarwal</a>
+                                        <a href="https://github.com/Khushi-agarwal1401" class="card-body1" target="_blank" rel="noopener">github.com/khushiagarwal</a>
                                     </div>
                                 </div>
                             </div>
@@ -398,7 +514,7 @@
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_next" value="https://khushi-agarwal1401.github.io/ui-portfolio/thank-you.html">
-                            <button type="submit"><i class="bi bi-send"></i> Send Message</button>
+                            <button type="submit" class="magnetic"><i class="bi bi-send"></i> Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -409,7 +525,12 @@
         <hr class="footer-line">
         <div class="last-div">
             <p class="lastsec-stmt">"Every line of code brings me one step closer to building India's technological future."</p>
-            <p class="copyright">© 2025 Khushi Agarwal. Built with passion and purpose.</p>
+            <div class="footer-social">
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWrRpcckvTQfTqzsHRTxcxwcmTNRGBKsClNPWPLgChBvjXZtPFcTpcxnDWGbzDlRQSQlMZjkQ" target="_blank" rel="noopener" aria-label="Email" class="magnetic"><i class="bi bi-envelope"></i></a>
+                <a href="https://github.com/Khushi-agarwal1401" target="_blank" rel="noopener" aria-label="GitHub" class="magnetic"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/khushi-agarwal-a37846381/" target="_blank" rel="noopener" aria-label="LinkedIn" class="magnetic"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <p class="copyright">© <span id="year">2025</span> Khushi Agarwal. Built with passion and purpose.</p>
         </div>
     </footer>
     <script src="./src/scripts/script.js"></script>

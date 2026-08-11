@@ -13,15 +13,23 @@ The site showcases my skills, projects, education, and career vision in a clean,
 - **Education** — Higher Secondary Education (11th & 12th) and current B.Tech in Computer Science
 - **Career Vision & Goals** — The "Indus" vision, "Make in India" mission, and supporting goals
 - **Get In Touch** — Contact details plus a working message form powered by [FormSubmit](https://formsubmit.co/)
-- **Thank-you page** — Confirmation page after sending a message
-- **Polish** — Smooth scroll navigation, scroll-reveal animations, staggered card entrances, floating hero image, scroll-to-top button, compact sticky navbar, and `prefers-reduced-motion` support
+- **Thank-you page** — Confirmation page after sending a message, styled to match the glassmorphism theme
+- **Light/Dark theme toggle** — Switch between light and dark (charcoal-black) glassmorphism palettes; the choice persists in `localStorage`, defaults to the system preference, is applied before first paint, and cross-fades via the View Transitions API. Both the portfolio and thank-you pages respect it
+- **Scroll animation pack** — Reading progress bar (native CSS scroll-driven animations with a JS fallback), scroll-linked parallax on the hero photo and background blobs, animated skill proficiency bars, plus the existing scroll-reveal/staggered entrances
+- **Skills radar charts** — Two animated hexagon (radar) charts for technical and soft skills: the gradient fill grows from the center, the outline draws itself around the data polygon, and vertex dots pop in with a stagger as the section scrolls into view. Colors follow the active light/dark theme
+- **Magnetic buttons** — Hero CTAs, submit button, footer icons, and the thank-you button gently pull toward the cursor (fine pointers only, respects reduced motion)
+- **Hero typewriter** — A blinking-caret typing effect cycles through roles (Web Developer, Problem Solver, Tech Entrepreneur, Future Innovator); reduced-motion users get the first role shown statically
+- **Tech-stack marquee** — A seamless, pure-CSS scrolling strip of technologies (HTML, CSS, JS, Python, MySQL, C++, Git, responsive design, OOP) with edge fading and pause-on-hover; reduced-motion users get a static scrollable strip
+- **SEO & performance** — JSON-LD `Person` schema, Open Graph + Twitter cards, canonical URL, `robots.txt`, `sitemap.xml`, LCP `fetchpriority` hint on the hero image, `noindex` on the thank-you page, and an improved `<title>`/description
+- **Polish** — Smooth scroll navigation, scroll-reveal animations, staggered card entrances, floating hero photo with an animated gradient ring, decorative background blobs, scrollspy (the nav link of the section in view is highlighted), a scroll-to-top button, a compact sticky navbar, custom scrollbar/selection styles, keyboard focus indicators, auto-updating footer year, and `prefers-reduced-motion` support
+- **Responsive navigation** — Hamburger menu with animated icon on mobile/tablet; the dropdown closes on link click, outside click, or `Esc`
 
 ## 🛠️ Tech Stack
 
 - **HTML5** — Semantic, accessible markup
 - **CSS3** — Custom properties (design tokens), flexbox/grid layouts, keyframe animations, responsive breakpoints
 - **JavaScript** — Vanilla JS for navigation, scroll effects, and UI interactions (no frameworks)
-- **Bootstrap Icons** — Icon set loaded via CDN
+- **Bootstrap Icons** — Icon set loaded via CDN (no npm dependency required)
 - **Google Fonts** — Inter + Poppins
 - **FormSubmit** — Zero-backend contact form delivery
 
@@ -31,16 +39,22 @@ The site showcases my skills, projects, education, and career vision in a clean,
 .
 ├── index.html              # Main portfolio page
 ├── thank-you.html          # Post-form-submission confirmation page
-├── package.json
+├── sitemap.xml             # SEO sitemap
+├── robots.txt              # Crawler rules
+├── package.json            # Project metadata & scripts
 ├── README.md
+├── .gitignore
 ├── public/
 │   └── images/
 │       └── Me.jpg          # Profile photo
-└── src/
-    ├── styles/
-    │   └── style.css       # All styles & animations
-    └── scripts/
-        └── script.js       # Navigation, scroll & reveal logic
+├── src/
+│   ├── styles/
+│   │   └── style.css       # All styles & animations (incl. thank-you page)
+│   └── scripts/
+│       ├── theme-init.js   # Pre-paint theme bootstrap (both pages)
+│       └── script.js       # Navigation, scroll & UI interactions
+└── scripts/
+    └── validate.mjs        # Zero-dependency HTML/link/asset validator (npm test)
 ```
 
 ## 🚀 Getting Started
@@ -59,13 +73,13 @@ python3 -m http.server 8080
 # Then visit http://localhost:8080
 ```
 
-### Option 3: Install dependencies (optional)
+### Option 3: Validate the project (recommended before deploying)
 
 ```bash
-npm install
+npm test
 ```
 
-> `bootstrap-icons` is listed as a dependency for reference, but the site loads icons from a CDN, so installation is not required to run it.
+> Zero-dependency checks: duplicate IDs, broken in-page anchors, missing local assets, duplicate `<title>` tags, `console.*` statements, and missing `rel="noopener"` on external links. There are no runtime dependencies — icons and fonts load from CDNs, so `npm install` is not required to run the site.
 
 ## 📬 Contact Form Setup
 

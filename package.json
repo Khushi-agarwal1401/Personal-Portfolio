@@ -1,10 +1,11 @@
 {
   "name": "ui-portfolio",
   "version": "1.0.0",
-  "description": "My Portfolio Web Site",
-  "main": "index.js",
+  "description": "Personal portfolio website for Khushi Agarwal — a Computer Science student and aspiring tech entrepreneur.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node scripts/validate.mjs",
+    "validate": "node scripts/validate.mjs",
+    "serve": "python3 -m http.server 8080"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
     "url": "https://github.com/Khushi-agarwal1401/ui-portfolio/issues"
   },
   "homepage": "https://github.com/Khushi-agarwal1401/ui-portfolio#readme",
-  "dependencies": {
-    "bootstrap-icons": "^1.13.1"
+  "engines": {
+    "node": ">=18"
   }
 }
